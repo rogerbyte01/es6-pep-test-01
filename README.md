@@ -116,20 +116,3 @@ Electronics    : ₹55000.00
 Accessories    : ₹3800.00
 Furniture      : ₹6500.00
 ========================================
-```
-
----
-
-## Prerequisites
-Make sure [Node.js](https://nodejs.org/) is installed on your system (v14 or above recommended).
-
-## Output Screenshots
-*(Add screenshots of your terminal output here, e.g. `screenshots/q1-output.png`,
-`screenshots/q2-output.png`, and reference them below)*
-```
-screenshots/q1-output.png
-screenshots/q2-output.png
-```
-
-## GitHub Repository Link
-*(Add your repository link here once uploaded, e.g. https://github.com/your-username/your-repo)*

@@ -1,36 +1,33 @@
-# Student Performance Analyzer
+# Online Cart Billing System
 
 ## Project Title
-Student Performance Analyzer — ES6 Console Application
+Online Cart Billing System — ES6 Console Application
 
 ## Problem Statement
-A faculty member wants to analyze student performance after a JavaScript mid-term evaluation.
-This program processes a list of student records (id, name, marks, attendance) and:
+An online store wants a billing system that calculates product-wise totals, removes unavailable
+items, applies discount rules, and produces a final bill. This program:
 
-1. Filters out students who passed (marks >= 40).
-2. Builds a report containing each student's name, marks, attendance, and grade.
-3. Assigns grades using the rule:
-   - marks >= 80 → A
-   - marks >= 60 → B
-   - marks >= 40 → C
-   - otherwise → F
-4. Calculates the class average marks.
-5. Finds the topper of the class.
-6. Displays all results neatly using template literals.
+1. Removes products with quantity 0 (unavailable items).
+2. Builds a billed-items list containing product name, quantity, price, and itemTotal.
+3. Calculates the subtotal of the cart.
+4. Applies a 10% discount if the subtotal is greater than ₹50,000 (otherwise no discount).
+5. Adds 18% GST after the discount to get the final payable amount.
+6. Calculates category-wise total amount (Electronics, Accessories, Furniture).
+7. Displays a complete, neatly formatted bill summary.
 
 ## ES6 Concepts Used
 - `let` and `const` for variable declarations
 - Arrow functions
-- Template literals for formatted output
-- Array destructuring (e.g. `({ marks }) => ...`)
-- `filter()` — to get passed students
-- `map()` — to build the student report with grades
-- `reduce()` — to calculate class average and find the topper
-- Default/clean function design with meaningful variable names
+- Template literals for formatted bill output
+- Object/array destructuring
+- Spread operator (`...product`) to extend objects with new fields
+- `filter()` — to remove out-of-stock items
+- `map()` — to compute item totals per product
+- `reduce()` — to calculate subtotal and category-wise totals
 
 ## Project Structure
 ```
-Question1-Student-Performance-Analyzer/
+Question2-Online-Cart-Billing-System/
 ├── index.js        # Main program
 └── README.md       # Documentation
 ```
@@ -45,27 +42,28 @@ Question1-Student-Performance-Analyzer/
 
 ## Sample Output
 ```
-===== STUDENT PERFORMANCE ANALYZER =====
+===== ONLINE CART BILLING SYSTEM =====
 
---- List of Passed Students (marks >= 40) ---
-✔ Aman - Marks: 85
-✔ Karan - Marks: 67
-✔ Simran - Marks: 91
-✔ Raj - Marks: 45
+--- Available Products ---
+Laptop         | Qty: 1 | Price: ₹55000.00 | Item Total: ₹55000.00
+Mouse          | Qty: 2 | Price: ₹700.00 | Item Total: ₹1400.00
+Keyboard       | Qty: 1 | Price: ₹1500.00 | Item Total: ₹1500.00
+USB Cable      | Qty: 3 | Price: ₹300.00 | Item Total: ₹900.00
+Office Chair   | Qty: 1 | Price: ₹6500.00 | Item Total: ₹6500.00
 
---- Full Student Report (with Grades) ---
-Name: Aman     | Marks: 85  | Attendance: 92% | Grade: A
-Name: Riya     | Marks: 38  | Attendance: 76% | Grade: F
-Name: Karan    | Marks: 67  | Attendance: 81% | Grade: B
-Name: Simran   | Marks: 91  | Attendance: 88% | Grade: A
-Name: Raj      | Marks: 45  | Attendance: 60% | Grade: C
-Name: Neha     | Marks: 29  | Attendance: 95% | Grade: F
+--- Bill Summary ---
+Subtotal           : ₹65300.00
+Discount Applied    : ₹6530.00 (10% applied)
+Amount After Discount: ₹58770.00
+GST (18%)           : ₹10578.60
+Final Payable Amount: ₹69348.60
 
---- Class Statistics ---
-Class Average Marks : 59.17
-Topper of the Class : Simran (Marks: 91)
+--- Category-wise Total ---
+Electronics    : ₹55000.00
+Accessories    : ₹3800.00
+Furniture      : ₹6500.00
 
-=========================================
+========================================
 ```
 
 ## Output Screenshot
